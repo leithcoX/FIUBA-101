@@ -1,0 +1,560 @@
+\documentclass[11pt]{article}
+
+% \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{fontspec}
+\usepackage{xcolor}
+% \usepackage{showframe}
+\usepackage[margin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{wrapfig}
+\usepackage[normalem]{ulem}
+% \usepackage[none]{hyphenat}
+
+\setlist[itemize]{leftmargin=*, itemsep=-15pt}
+
+\graphicspath{{img}}
+
+\newfontfamily\oswaldFont{Oswald}[
+  Path = fonts/static/,
+  UprightFont = *-Regular,
+  BoldFont    = *-Bold,
+  ItalicFont  = *-Light,
+  BoldItalicFont = *-SemiBold
+]
+
+\newfontfamily\droidFont{DroidSerif}[
+  Path = fonts/,
+  BoldFont    = *-Bold,
+  ItalicFont  = *-Italic,
+]
+
+\setmainfont{DroidSerif}
+
+\definecolor{greenOne}{HTML}{6aa84f}
+\definecolor{greenTwo}{HTML}{38761d}
+\definecolor{greenThree}{HTML}{274e13}
+
+\setlength{\parskip}{1.3 \baselineskip}
+
+
+\newcommand{\heading}[1]{%
+  {\color{greenThree} #1}
+}
+
+\titleformat{\section}
+  { \oswaldFont \color{greenOne}\bfseries\fontsize{15}{18}\selectfont }
+  {\thesection.}
+  {0.6em}
+  {\MakeUppercase}
+
+\titleformat{\subsection}
+  { \oswaldFont \color{greenThree}\bfseries\fontsize{13}{18}\selectfont }
+  {\thesubsection.}
+  {0.6em}
+  {\MakeUppercase}
+
+
+\titleformat{\subsubsection}
+  { \droidFont \color{greenOne}\fontsize{13}{18}\selectfont }
+  {\thesubsubsection.}
+  {0.6em}
+  {} % TODO modificar para que se subraye la subseccion tmb
+\newcommand{\addul}[1]{\underline{#1}} 
+
+%%% DOCUMENT
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \color{greenTwo}
+    {\oswaldFont \fontsize{42}{1}\selectfont FIUBA 101}
+
+    {\fontsize{13}{1}\selectfont \color{black} \textit{Todo lo que necesitas saber como ingresante de Ingeniería Electrónica y/o de Bioingeniería de la Facultad de Ingeniería de la Universidad de Buenos Aires (FIUBA) }}
+
+    \includegraphics[width=1 \textwidth]{fiuba}
+
+    \textbf{\droidFont \fontsize{18}{1}\selectfont Introducción a la Ingeniería Electrónica / Introducción a la Bioingeniería}
+
+    2C2025A
+
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+\section{DATOS IMPORTANTES A RECORDAR}\label{sec:datos_importantes_a_recordar} % (fold)
+En FIUBA por lo general se utiliza mucho el número de padrón, un número de seis dígitos que te identifica inequívocamente dentro de la FIUBA.
+A veces es referido como legajo, que es un número distinto de cuatro dígitos que también tenés asociado.
+Se recomienda recordar estos números, especialmente el padrón, ya que se solicita a veces a la hora de rendir o pasar asistencia en las materias.
+También deberías incluirlo en tus trabajos prácticos, entregas y evaluaciones.
+Este número se puede encontrar en el SIU Guaraní FIUBA, en todos los comprobantes de inscripción a materias, finales u otras solicitudes.
+También aparece en el pdf que se descarga al bajar el plan de estudios desde SIU Guaraní (sí, así de antiintuitivo) y en el certificado de alumno regular.
+
+También es importante generar el mail fiuba, ya que es utilizado con bastante frecuencia dentro del entorno de la facultad.
+\textbf{Pro tip:} la mayoría de los mails siguen un patrón del estilo inicial del nombre + apellido, para nombres o apellidos comunes a veces se agregan letras del nombre o, de tenerlo, la inicial del segundo apellido.
+Se recomienda fuertemente cambiar el mail que aparece por defecto en el Campus de la facultad al mail FIUBA, para asegurarse de que el mail que le figure a los docentes de las materias sea i) apropiado y ii) utilizado por el alumno.
+
+
+\subsection{¿Qué significan todos los roles que aparecen en el listado de docentes?}
+% \addcontentsline{toc}{subsection}{#1}
+
+\begin{itemize}
+    \item Profesor Titular / Profesor Asociado: Está a cargo de todas las cátedras de la materia. 
+    \item Profesor Adjunto: Está a cargo del curso. Por lo general da la clase teórica. 
+    \item Jefe de Trabajos Prácticos (JTP): Es el encargado de la parte práctica de la materia: se ocupa de los enunciados de los trabajos prácticos. Frecuentemente da la teoría necesaria para la parte práctica de la materia, y presenta ejercicios junto a los Ayudantes. 
+    \item Ayudante 1ero: Ayuda en la clase, corrige trabajos prácticos, presenta ejercicios. Son graduados. 
+    \item Ayudante 2do / Colaborador:  Ayuda en la clase, corrige trabajos prácticos, presenta ejercicios. Son estudiantes de grado. 
+\end{itemize}
+
+La distribución de la corrección de Trabajos Prácticos y Parcial(es) difiere en las distintas materias, pero por lo general la realizan todos los miembros del plantel docente de la cátedra a la que uno se anotó.
+La corrección de la Evaluación Integradora es realizada únicamente por los Profesores Adjuntos en la gran mayoría de los casos.
+
+\subsection{Una nota sobre los colaboradores de las materias}\label{sub:una_nota_sobre_los_colaboradores_de_las_materias} % (fold)
+Frecuentemente uno llega a una materia y, además de presentarte a los profes y ayudantes que aparecen listados en el SIU, te añaden que hay algún \textit{colaborador} o \textit{ayudante} extra, que es estudiante como uno y que también está a disposición.
+Quizás aparece en la mayoría de las clases prácticas, quizás da alguna clase puntual, quizás te corrige un trabajo práctico.
+Ahora, hay una diferencia entre colaborador y ayudante de 2da.
+En esencia, un colaborador es un ayudante de 2da ad-honorem (es decir, a quien no le pagan).
+Quizás no viene a todas las clases, quizás no sabe responder alguna pregunta puntual.
+Están donando su tiempo a mejorar la cátedra y a aprender lo que se está dando desde el otro lado.
+Tal como nosotros, también son alumnos y quizás no tienen todas las respuestas.
+% subsection Una nota sobre los colaboradores de las materias (end)
+
+\subsection{Gente que deberías conocer}\label{sub:} % (fold)
+La UBA es muy grande, pero hay ciertas autoridades de las cuales deberías saber el nombre y entender su posición dentro de la estructura jerárquica de la universidad:
+\begin{itemize}
+    \item Dr. Ricardo Gelpi: es el rector actual de la Universidad de Buenos Aires. Es la máxima autoridad académica de la UBA. Es médico.
+    \item Ing. Alejandro Martínez: es el decano de la Facultad de Ingeniería de la Universidad de Buenos Aires. Es la máxima autoridad académica de FIUBA. Es Ingeniero en Electrónica, especializado en Telecomunicaciones. 
+    \item Ing. Ricardo Veiga: es el director de la carrera de Ingeniería Electrónica. 
+    \item Sergio Lew: es el director de la carrera de Bioingeniería.
+\end{itemize}
+% subsection  (end)
+
+% section DATOS IMPORTANTES A RECORDAR (end)
+
+
+
+\section{DÓNDE ESTÁ todo en fiuba}\label{sec:donde_esta_todo_en_fiuba} % (fold)
+En esta sección la idea es enfocarnos en el edificio donde vas a cursar la gran mayoría de las materias de FIUBA: Av. Paseo Colón 850.
+En Las Heras se cursan algunas materias del tronco común como Legislación y Ejercicio Profesional, pero la mayor parte de la carrera se lleva a cabo en Paseo Colón.
+Vamos a tomar el eje de coordenadas en esta facultad en el medio en el mismo sentido en el que entras: es decir, mirando siempre hacia Azopardo (Puerto Madero) para adelante, a Paseo Colón (la entrada) para atrás, a Independencia a izquierda, y Estados Unidos a derecha.
+De mencionarse ambas sedes, se identificará a Paseo Colón como PC y a Las Heras como LH.
+% TODO insertar pie de pagina
+
+\subsection{Baños}\label{sub:banos} % (fold)
+Los baños de mujeres siempre están a la izquierda (hay en todos los pisos menos en el primero), y los de hombres a derecha (hay en todos los pisos).
+El baño del subsuelo es mixto.
+% subsection Banos (end)
+
+\subsection{¿CÓMO encuentro mi aula?}\label{sub:como_encuentro_mi_aula_} % (fold)
+Las aulas están, para los pisos del 1 al 5, numeradas en función del piso en el primer dígito (e.g. El aula 203 está en el 2do piso).
+Por lo general las aulas impares están a izquierda y las pares están a derecha.
+Las aulas que tienen la letra E adelante están en el entrepiso, que se encuentra en el subsuelo.
+Las aulas que tienen la letra L adelante son laboratorios, y están en el primer piso (casi todas a la derecha, salvo la L13).
+
+Si no está aclarado en SIU qué aula corresponde para una materia/examen, lo ideal es acercarse a las carteleras del departamento que da la materia (e.g. al departamento de Física para ver el aula de Física de los Sistemas de Partículas, o al departamento de Electrónica para ver el aula de Introducción a la Bioingeniería / Introducción a la Ingeniería Electrónica (que es la L14, pero igual se puede ir a chequear)).
+Para saber dónde están los departamentos, visita esa sección. % TODO agregar link a la seccion
+
+Las aulas las asigna Bedelía (se encuentra en el 2do piso a la izquierda más o menos a mitad del pasillo), en caso de dudas o modificaciones se puede consultar ahí.
+También se puede pedir ahí un aula para dar charlas o estudiar (dato curioso del día).
+% subsection como encuentro mi aula? (end)
+
+\subsection{Un poco sobre la biblioteca}\label{sub:un_poco_sobre_la_biblioteca} % (fold)
+FIUBA tiene dos bibliotecas: la de Paseo Colón (PC) se encuentra en el tercer piso, y la de Las Heras (LH) está a la derecha casi al ingresar (pasando el ascensor).
+La biblioteca de Paseo Colón es un espacio súper útil donde se puede estudiar tanto en la sala silenciosa como en la parlante (ideal para estudiar con amigos o tomar una clase virtual).
+Hay internet gratis, tomas para cargar la compu o el celu y bastante espacio.
+
+La biblioteca ofrece varios servicios de suma utilidad: se pueden pedir computadoras para utilizar en la biblioteca, o pedir libros para usar en sala o para llevarlos a casa (el préstamo es por una semana, y se puede renovar hasta tres veces).
+Se pueden consumir alimentos y bebidas, pero después dejá todo limpio (¡el espacio es de todos!).
+% subsection Un poco sobre la biblioteca (end)
+
+
+\subsection{Todo sobre el LABI, el epicentro de la electrónica}\label{sub:todo_sobre_el_labi_el_epicentro_de_la_electronica} % (fold)
+El Laboratorio Abierto (LABi) se encuentra en PC en el primer piso a la derecha (hay que seguir el pasillo hasta el final y girar a la derecha de nuevo), y es de los espacios que más atesoramos los electrónicos.
+Además de ser un gran punto de encuentro, el LABi tiene espacio para que puedas estudiar, charlar y/o realizar proyectos de electrónica.
+Se presta instrumental (anotándose y dejando el DNI) para realizar trabajos (soldadores, osciloscopios, multímetros, fuentes, generadores, calibres… y mucho más), hay tanto profes como alumnos dando vueltas dispuestos a contestar dudas y ayudar cuando se requiere, y es un gran espacio para aprender y formarte en la carrera.
+Se pueden consumir alimentos y bebidas, pero después dejá todo limpio (¡el espacio es de todos!).
+
+En el LABi se realizan los talleres de soldadura, y también otros cursos útiles para seguir formándose como ingenieros.
+También es donde se llevan a cabo varios de los clubes de la facultad, como el Club de Robótica o el de Radiofrecuencias, y donde está la bandera de IEEE.
+
+El LABi tiene una rotación de profes que normalmente van a asistir a los alumnos, pasantes (que son alumnos remunerados por estar en el LABi y ocuparse del instrumental y de los componentes) y colaboradores (alumnos no remunerados que hacen del LABi su espacio y andan dando vueltas normalmente por ahí).
+% subsection todo sobre el labi, el epicentro de la electronica (end)
+
+
+\subsection{Todo sobre el BILAB, el núcleo de la bioingenieria}\label{sub:todo_sobre_el_bilab_el_nucleo_de_la_bioingenieria} % (fold)
+El Laboratorio de Bioingeniería (BILAB) se encuentra en el 4to piso, a la izquierda al fondo del pasillo.
+Allí pueden realizar consultas a docentes afines a la bioingeniería, realizar trabajos prácticos y participar de los proyectos que están llevando a cabo.
+También tienen materiales e instrumentos de medición varios de suma utilidad.
+Pueden ver más en su Instagram: @bilab.fiuba
+% subsection Todo sobre el BILAB, el nucleo de la bioingenieria (end)
+
+\subsection{Los clubes de la FIUBA: el verdadero aprendizaje basado en proyectos }\label{sub:los_clubes_de_la_fiuba_el_verdadero_aprendizaje_basado_en_proyectos_} % (fold)
+\subsubsection{Club de Robotica}\label{sec:club_de_robotica} % (fold)
+En el Club de Robótica (CDR) se realizan proyectos principalmente relacionados a la robótica, como robots de competición en la Liga Nacional de Robótica o robots recreativos.
+También se realizan proyectos independientes.
+Quien quiera puede sumarse al Club.
+Pueden ver un poco más de lo que hacen en su Instagram: @cdr.fiuba.
+Se juntan los viernes de 19 a 22hs en el LABi.
+% subsubsection Club de Robotica (end)
+
+\subsubsection{Club de Radiofrecuencia}\label{sec:club_de_radiofrecuencia} % (fold)
+En el Club de Radiofrecuencias (RF) se realizan proyectos relacionados a las comunicaciones y la amplificación de potencia.
+Se juntan los jueves de 18 a 20hs.
+Pueden ver un poco más de lo que hacen en su Instagram: @rf\_fiuba.
+% subsubsection Club de Radiofrecuencia (end)
+
+\subsubsection{FIUBARACING}\label{sec:fiubaracing} % (fold)
+El FIUBA Racing Team está desarrollando un monoplaza para competir en el interfacultades 2026.
+En el proyecto participan electrónicos, informáticos y mecánicos.
+Pueden ver un poco más de lo que hacen en su Instagram: @fiubaracing
+% subsubsection FIUBARACING (end)
+
+\subsubsection{ASTAR}\label{sec:astar} % (fold)
+El equipo de ASTAR se enfoca en la ingeniería aeroespacial, y desarrollaron un CubeSAT que viajará en la misión Artemis II de la NASA.
+Pueden ver un poco más de lo que hacen en su Instagram: @astar\_aeroespacial
+% subsubsection ASTAR (end)
+
+% subsection Los clubes de la FIUBA: el verdadero aprendizaje basado en proyectos  (end)
+
+
+\subsection{La rama estudiantil IEEE UBA}\label{sub:la_rama_estudiantil_ieee_uba} % (fold)
+\begin{wrapfigure}{r}{0.45\textwidth} %this figure will be at the right
+    \centering
+    \includegraphics[width=0.45\textwidth]{ieee}
+\end{wrapfigure}
+La Rama Estudiantil IEEE UBA es la representación del Instituto de Ingenieros Eléctricos y Electrónicos (IEEE) para toda la UBA.
+La rama organiza eventos cuyo fin es mejorar la trayectoria académica de los estudiantes y conseguir oportunidades de crecimiento intelectual y profesional para sus miembros.
+Organizan la ExpoClubes, donde los distintos clubes de la FIUBA presentan sus avances y proyectos para que otros alumnos puedan conocer sus propuestas y sumarse al desarrollo que se realiza en la facultad para complementar lo aprendido en las aulas.
+
+También traen Oradores Distinguidos (DLs por sus siglas en inglés, Distinguished Lecturers) de todo el mundo a dar charlas sobre temas de interés para alumnos y docentes como radares o electrónica de potencia.
+Para más información pueden visitar el Instagram de la rama y sumarse a la Comunidad de WhatsApp
+% subsection La rama estudiantil IEEE UBA (end)
+
+
+\subsection{Departamentos de la facultad: la magia de la cartelera}\label{sub:departamentos_de_la_facultad_la_magia_de_la_cartelera} % (fold)
+Los departamentos de la Facultad se incluyen en orden ascendente desde el primer piso.
+En los que tienen materias asociadas, allí se encuentra la cartelera indicando en qué aula se desarrollan las clases o actividades.
+
+\subsubsection{El departamento de electrónica}\label{sec:el_departamento_de_electronica} % (fold)
+Primer piso, a la derecha.
+El mail es electron@fi.uba.ar.
+La gran mayoría de las materias de la carrera son de este departamento, salvo las estipuladas en los siguientes incisos
+% subsubsection El departamento de electronica (end)
+
+
+\subsubsection{El departamento de Matematicas}\label{sec:el_departamento_de_matematicas} % (fold)
+Primer piso, a la izquierda. El mail es matem@fi.uba.ar. Las materias de este departamento que se encuentran en los planes de estudio de electrónica o bioingeniería son Álgebra II, Análisis Matemático II, Probabilidad y Estadística, y Análisis Matemático III (obligatoria en plan viejo). 
+% subsubsection El departamento de Matematicas (end)
+
+\subsubsection{El departamento de Fisica}\label{sec:el_departamento_de_fisica} % (fold)
+Segundo piso, a la derecha. El mail es fisica@fi.uba.ar. Las materias de este departamento que se encuentran en el plan de estudio de electrónica y bioingeniería son Física de los Sistemas de Partículas, y Electricidad, Magnetismo y Calor; y para bioingeniería se suma Física de Sólidos y Nuclear. 
+% subsubsection El departamento de Fisica (end)
+
+\subsubsection{El departamento de Alumnos}\label{sec:el_departamento_de_alumnos} % (fold)
+Planta baja, a la derecha. Igual no te van a abrir la puerta. Manda directo un mail a admision@fi.uba.ar y ahorrate diez minutos de tu vida. La mayoría de las cosas para las que uno iría al departamento de alumnos en realidad las gestiona Tramitaciones, y el mail de ellos es tramitaciones@fi.uba.ar. 
+% subsubsection El departamento de Alumnos (end)
+
+\subsubsection{El departamento de Computacion}\label{sec:el_departamento_de_computacion} % (fold)
+Cuarto piso, a la derecha. El mail es computacion@fi.uba.ar. Las materias del departamento que se encuentran en los planes de estudio de electrónica o bioingeniería son Algoritmos y Programación y Análisis Numérico (obligatoria en el plan viejo). 
+% subsubsection El departamento de Computacion (end)
+
+\subsubsection{Departamento de Movilidad Academica}\label{sec:departamento_de_movilidad_academica} % (fold)
+Planta baja, a la derecha (antes de los ascensores).
+% subsubsection Departamento de Movilidad Academica (end)
+
+\subsubsection{Departamento de Gestion}\label{sec:departamento_de_gestion} % (fold)
+En Las Heras, primer piso a la derecha. El mail es economia@fi.uba.ar.
+Las materias del departamento que se encuentran en los planes de estudio de electrónica o bioingeniería son Legislación y Ejercicio Profesional de la Ingeniería e Introducción a la Economía y la Organización de la Empresa (obligatoria en el plan viejo). 
+% subsubsection Departamento de Gestion (end)
+
+\subsubsection{Departamento de Idiomas}\label{sec:departamento_de_idiomas} % (fold)
+En PC, quinto piso a la izquierda bien pegado contra Azopardo.
+El mail es idiomas@fi.uba.ar.
+Es donde se realiza la Prueba de Suficiencia de Inglés, y adicionalmente ofrecen cursos de varios idiomas.
+% subsubsection Departamento de Idiomas (end)
+
+\subsubsection{Departamento de Quimica}\label{sec:departamento_de_quimica} % (fold)
+En PC, quinto piso a la izquierda bien pegado contra Paseo Colón.
+Los electrónicos realizan la materia Química y Electroquímica del departamento.
+Los bioingenieros realizan Química Básica y Química de los Compuestos Orgánicos.
+El mail es dquimica@fi.uba.ar.
+% subsubsection Departamento de Quimica (end)
+
+\subsubsection{Departamento de Seguridad del Trabajo y Ambiente}\label{sec:departamento_de_seguridad_del_trabajo_y_ambiente} % (fold)
+En PC, cuarto piso a la derecha. El mail es diat@fi.uba.ar.
+Los electrónicos y bioingenieros realizan las materias de Higiene y Seguridad, y de Impacto Social, Ambiental y Desarrollo Sustentable del departamento.
+% subsubsection Departamento de Seguridad del Trabajo y Ambiente (end)
+
+% subsection Departamentos de la facultad: la magia de la cartelera (end)
+
+\subsection{Todo sobre el pañol donde podes pedir material e instrumental}\label{sub:todo_sobre_el_panol_donde_podes_pedir_material_e_instrumental} % (fold)
+ El pañol se encuentra en PC en el primer piso a la derecha (hay que seguir el pasillo hasta el final y girar a la izquierda en un pasillo finito, a la derecha van a ver una reja con una ventanita, es ahí), y cuenta con varios pasantes y algún profe que se ocupan de dar instrumental tanto a alumnos como a docentes.
+ Igual que en el LABi, se pide algún carnet de identificación (DNI, licencia, etc.) para el retiro de equipo, y adicionalmente una firma en el registro del equipo pedido.
+ Los pasantes son alumnos de FIUBA, generalmente electrónicos.
+% subsection TODO SOBRE EL PAnol donde podes pedir material e instrumental (end)
+
+\subsection{El laboratorio de circuitos impresos, los heroes sin capa de la FIUBA}\label{sub:el_laboratorio_de_circuitos_impresos_los_heroes_sin_capa_de_la_fiuba} % (fold)
+El Laboratorio de Circuitos Impresos (LCI) se encuentra en el primer piso a la derecha (hay que seguir el pasillo hasta el final y girar a la izquierda en un pasillo finito, se hace todo ese pasillo derecho y se sale por las puertas de la derecha, y se sigue hasta el final donde hay una puerta verde con un cartel que dice “LCI”), y es donde pueden mandar a hacer sus placas (PCBs).
+Por lo general les van a pedir que manden un mail a laboratoriolci@gmail.com, donde el mensaje automático les explicará qué enviar.
+% subsection El laboratorio de circuitos impresos, los heroes sin capa de la FIUBA (end)
+
+\subsection{¿Dónde puedo comer?}\label{sub:donde_puedo_comer_} % (fold)
+En el subsuelo se encuentra la cafetería oficial del centro de estudiantes, tanto en PC como en LH.
+En PC se accede desde planta baja yendo a la derecha hasta el fondo, hasta la izquierda hasta el fondo y hacia la derecha, bajando por las escaleras (o por el ascensor de mantenimiento).
+En LH está justo atrás de la escalera central.
+El comedor del centro de estudiantes solo se maneja con efectivo.
+
+Fuera de la facultad, en el horario del almuerzo por lo general venden en las escaleras sandwiches de milanesa o calzones.
+Si quieren salir un poco de la facultad, algunas opciones que los fiubenses frecuentan son las siguientes:
+
+\begin{itemize}
+  \item Mostaza de Puerto Madero.
+  \item La parri. (atrás de la Shell, más para la noche se pone mejor).
+  \item Mango Express. (Comida por peso)
+  \item Food Express. (Comida por peso)
+\end{itemize}
+% subsection Donde puedo comer? (end)
+
+% section Donde esta todo en fiuba (end)
+
+
+\section{Todo lo que necesitas saber del regimen de cursada, aprobacion y tramitaciones varias}\label{sec:todo_lo_que_necesitas_saber_del_regimen_de_cursada_aprobacion_y_tramitaciones_varias} % (fold)
+
+\subsection{¿Qué significa regularizar una cursada?}\label{sub:que_significa_regularizar_una_cursada_} % (fold)
+Cuando cursas una materia y aprobas el parcial y los trabajos prácticos (junto con cualquier otra condición que imponga la cátedra) se dice que la cursada queda Regularizada.
+Eso implica que estás en condiciones de rendir el final de la materia, y luego de ello queda Aprobada.
+La nota que va al analítico es la nota de aprobación (algunas materias ponderan la nota del final o coloquio con la de cursada, otras no).
+%TODO: Agregar pie de pagina
+
+% subsection Que significa regularizar una cursada? (end)
+
+\subsection{Finales, duracion de regularidad}\label{sub:finales_duracion_de_regularidad} % (fold)
+La regularidad de una materia dura por tres cuatrimestres.
+Eso significa que el final lo podes rendir en las siguientes tres tandas de finales.
+Por ejemplo, si uno regulariza una cursada en el primer cuatrimestre del 2025 (1C2025), puede rendir el final hasta la tanda de finales del primer cuatrimestre del 2026 inclusive (es decir, en los finales de 1C2025, 2C2025, 1C2026).
+El alumno \textbf{puede presentarse a hasta tres (3) fechas de final en total para aprobar una cursada regularizada}.
+Esto significa que se pueden rendir las tres oportunidades en una tanda o repartirlas en distintas tandas.
+Ausentarse al final no cuenta como desaprobado, el docente pasa un “Ausente” y no cuenta como una fecha en la cual el alumno se presentara a rendir.
+Desaprobar un final NO se considera aplazo.
+Sí se considera aplazo desaprobar el final al menos una vez y volverse a anotar a la cursada, o desaprobar las 3 veces que uno se presentó al final de la materia (para más información de cuándo aplica el aplazo, ver esta sección).
+Si no se llega a aprobar el final en esas tres tandas de finales (pero todavía quedan oportunidades, por presentarse menos de tres veces) se puede pedir una prórroga, pero no todos los departamentos ni docentes las dan, y deben estar debidamente justificadas.
+%TODO: Agregar pie de pagina
+% subsection Finales, duracion de regularidad (end)
+
+\subsection{EXISTE LA PROMOCIon en FIUBA?}\label{sub:existe_la_promocion_en_fiuba_} % (fold)
+A ver.
+Sí y no.
+Algunas materias son “promocionables,” lo que implica que con sacar una buena nota de cursada se consideran aprobados todos los temas de la materia, pero estas promociones por lo general requieren de condiciones particulares estipuladas por la materia.
+De promocionar, el alumno debe anotarse igual a una mesa de final para que se pase la nota de aprobación de final.
+Conocidas promocionables son Introducción a la Ingeniería Electrónica / Introducción a la Bioingeniería, Algoritmos y Programación (cátedra Santisi), y Señales y Sistemas
+% subsection EXISTE LA PROMOCIon en FIUBA? (end)
+
+\subsection{Puedo cursar una materia sin tener aprobado el final de una de sus correlativas? (tramite de excepcion de correlatividad)}\label{sub:puedo_cursar_una_materia_sin_tener_aprobado_el_final_de_una_de_sus_correlativas_tramite_de_excepcion_de_correlatividad_} % (fold)
+Es condición obligatoria para que se considere siquiera la posibilidad de una excepción de correlatividad tener aprobada la cursada de la materia correlativa.
+Ahora, hay materias que pueden aceptar una excepción de correlatividad si al alumno le falta rendir el final de la materia correlativa.
+Eso depende principalmente de que los temas asociados a la instancia de evaluación final no sean esenciales para la cursada de la materia siguiente; y no se dará cuando los temas del final sean esenciales para comprender la cursada de la materia para la cual se pide la excepción.
+Esto se recomienda consultarlo previamente a anotarse con el docente de la materia de la cual se quiere pedir la excepción de correlatividad, ya sea buscando el correo en la página de cátedra de la materia en cuestión o acercándose a alguna fecha de final a consultar.
+
+De aprobar el docente la excepción de correlatividad, el alumno deberá descargar el pedido de excepción de correlatividad en la página oficial de formularios de FIUBA, hacerlo firmar por el profesor adjunto de la materia y llevarlo al Departamento de Electrónica, donde el director de la carrera lo firmará.
+Luego se completa un formulario que habilita la facultad donde se debe cargar esta nota firmada y se deben asentar varios detalles con respecto a las fechas de cursada y final de la materia correlativa, para que se asiente la excepción.
+
+Es esencial recordar que no se debe rendir el final de la materia hasta haber aprobado el final de su correlativa.
+Si uno por ejemplo aprueba la cursada de Análisis de Circuitos y pide la excepción de correlatividad para cursar Electromagnetismo Aplicado, se debe rendir primero el final de Análisis de Circuitos y luego el de Electromagnetismo Aplicado.
+Es vital que el acta del final de la materia previa, en este caso Análisis de Circuitos, se cierre antes del acta de la materia nueva, en este ejemplo Electromagnetismo Aplicado.
+% subsection Puedo cursar una materia sin tener aprobado el final de una de sus correlativas? (tramite de excepcion de correlatividad) (end)
+
+\subsection{Certificado de examen}\label{sub:certificado_de_examen} % (fold)
+El certificado de examen se realiza para certificar que ese día se rindió un examen, generalmente para presentarlo en trabajos en caso de haberse pedido el día para rendir.
+Se recomienda llevarlo impreso (hay un modelo en el sitio de formularios de FIUBA, pero es mucho más estético y ampliamente utilizado el que se ofrece en el Campus Grado), pero también se puede pedir uno en el Departamento de Electrónica.
+El sellado se puede realizar luego del examen y no es esencial, se recomienda verificar con su empleador si es necesario realizar el sellado del mismo.
+Se completa toda la información del alumno y del examen y se entrega al docente para que lo firme.
+Luego se puede llevar a sellar al departamento correspondiente a la materia.
+% subsection CERTIFICADO DE EXAMEN (end)
+
+
+\subsection{Presentacion de certificado de trabajo}\label{sub:presentacion_de_certificado_de_trabajo} % (fold)
+Tres veces al año se habilita la presentación de certificado de trabajo.
+Esto implica cargar al menos un recibo de sueldo y varios datos sobre la situación laboral en un forms que habilita la facultad (generalmente el enlace lo suben todas las agrupaciones de la facultad y la FIUBA misma).
+También se puede inscribirse como monotributista de ser el caso.
+Por lo general se habilita en diciembre, febrero y junio/julio el forms.
+La presentación dura todo el año para el cual se presenta, e implica mejoras en la prioridad.
+% subsection Presentacion de certificado de trabajo (end)
+
+\subsection{El famoso ''titulo intermedio''}\label{sub:el_famoso_titulo_intermedio_} % (fold)
+En teoría los planes nuevos cuentan con un título intermedio, para el cual recientemente se cambiaron las condiciones a tener aprobadas las materias correspondientes a los primeros cinco cuatrimestres de la carrera según el plan de estudios.
+Supuestamente se realiza la solicitud del título intermedio por TAD.
+% subsection El famoso "titulo intermedio" (end)
+
+% section Todo lo que necesitas saber del regimen de cursada, aprobacion y tramitaciones varias (end)
+
+\section{Todo lo que necesitas saber del SIU GUARANI}\label{sec:todo_lo_que_necesitas_saber_del_siu_guarani} % (fold)
+
+\subsection{Inscripcion a materias}\label{sub:inscripcion_a_materias} % (fold)
+En cada periodo de inscripción a materias, los alumnos pueden anotarse a máximo 10 materias en un mismo cuatrimestre.
+Es muy importante no desinscribirse de una materia si se quiere realizar el cambio de curso.
+% subsection Inscripcion a materias (end)
+
+\subsection{Como se calcula la prioridad?}\label{sub:como_se_calcula_la_prioridad_} % (fold)
+La prioridad es lo que determina cuándo uno se anota a las materias: es un número del 1 al 120, y se habilitan los horarios de inscripción en orden ascendente (es decir, inician los de prioridad más baja y terminan los de prioridad más alta).
+A menor número, mayor prioridad.
+
+El fiubense promedio considera que el proceso de asignación de prioridades consta de un gatito tocando teclas al azar… pero en realidad sí hay una fórmula (no tan mágica) con la cual se calcula la prioridad.
+El cálculo del coeficiente de prioridad consiste en la suma del promedio, el coeficiente de regularidad y el adicional por certificado de trabajo.
+El promedio que se considera es, para el primer cuatrimestre, el promedio hasta el 31/12 del año previo y, para el segundo cuatrimestre, el promedio hasta el 30/04.
+El coeficiente de regularidad es 5 para ingresantes (por los primeros tres cuatrimestres en FIUBA) y, luego, se calcula como:
+
+$$ \mbox{Regularidad} =  \frac{2.5 * \mbox{creditos totales}}{22 * \mbox{cantidad de cuatrimestres}}  $$
+
+Finalmente, se suman 5 puntos en caso de contar con certificado de trabajo.
+Los coeficientes de prioridad se ordenan de menor a mayor en orden descendente; es decir, a mayor coeficiente de prioridad, menor prioridad.
+La prioridad inicia en 1, y cuanto más baja sea mejor.
+% subsection Como se calcula la prioridad? (end)
+
+
+\subsection{Que es un aplazo y en que casos alica?}\label{sub:que_es_un_aplazo_y_en_que_casos_alica_} % (fold)
+Un aplazo es una calificación de \textbf{dos (2)} que queda registrada en la libreta de notas y \textbf{se incluye en el promedio general de la carrera}.
+
+\textbf{No se considera aplazo} desaprobar un final una única vez.
+
+\textbf{Sí se considera aplazo} en los siguientes casos:
+
+\begin{itemize}
+    \item Desaprobar el final al menos una vez y luego volverse a anotar a cursar la materia.
+    \item Desaprobar el final en tres oportunidades
+\end{itemize}
+% subsection Que es un aplazo y en que casos alica? (end)
+
+
+\subsection{Como puedo ver todas las materias y catedras que se ofrecen?}\label{sub:como_puedo_ver_todas_las_materias_y_catedras_que_se_ofrecen_} % (fold)
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=1 \textwidth]{oferta_comisiones}
+\end{figure}
+Luego de acceder al SIU Guaraní FIUBA, en la solapa de “Reportes” seleccionar “Oferta de comisiones” para poder acceder a la oferta horaria.
+Es importante verificar el cuatrimestre en el cual se busca, en especial en el 2do cuatrimestre donde figura también la oferta horaria del primer cuatrimestre (y puede ser distinta a la del segundo).
+Se pueden utilizar los filtros mostrados a continuación, indicando periodo lectivo, actividad, docente o ubicación (aunque lo de la ubicación es medio un mito, siempre dice Sede Única.
+Para saber si se cursa en PC o LH, consultar o revisar el campus de la materia).
+
+% subsection Como puedo ver todas las materias y catedras que se ofrecen? (end)
+
+
+\subsection{Como puedo ver todas las fechas de examen de una tanda?}\label{sub:como_puedo_ver_todas_las_fechas_de_examen_de_una_tanda_} % (fold)
+Sin iniciar sesión en el SIU Guaraní FIUBA, en lugar de entrar a la cuenta en la solapa de “Acceso,” clickear la solapa de “Fechas de Examen.
+Filtrar según Responsable Académica: “Facultad de Ingeniería - FIUBA”, Ubicación: “Sede Única (Sede)”, Propuesta: “Bioingeniería” / “Ingeniería Electrónica” y haga click en “Buscar” en la sección superior derecha.
+Puede ver la Figura a continuación si tiene dudas: 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1 \textwidth]{fechas_examen}
+    \label{fig:fechas_examen}
+\end{figure}
+% subsection Como puedo ver todas las fechas de examen de una tanda? (end)
+
+
+\subsection{Como obtengo el certificado de alumno regular?}\label{sub:como_obtengo_el_certificado_de_alumno_regular_} % (fold)
+\begin{wrapfigure}{r}{0.3\textwidth} %this figure will be at the right
+    \centering
+    \includegraphics[width=0.3\textwidth]{tramites}
+\end{wrapfigure}
+Iniciando sesión en el SIU Guaraní FIUBA, en la solapa de “Trámites” seleccione la opción de “Solicitar Constancias y Certificados.”
+Realice una “Nueva Solicitud” y en “Constancia” seleccione “Constancia de Alumno Regular.”
+En “Presentar a” puede realizarla a un ente en específico (como un empleador u otro tipo de entidad) o realizar una solicitud genérica.
+Para eso simplemente poner “Presentar a”: “quien corresponda.”
+Luego lo enviará al menú con todas sus solicitudes y, haciendo click en el ícono de PDF a la derecha de la solicitud realizada, podrá descargarla
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.8 \textwidth]{constancia}
+    \label{fig:constancia}
+\end{figure}
+% subsection Como obtengo el certificado de alumno regular? (end)
+
+
+\subsection{El analitico parcial: uno de los grandes bugs del SIU}\label{sub:el_analitico_parcial_uno_de_los_grandes_bugs_del_siu} % (fold)
+El analitico parcial: uno de los grandes bugs del SIU
+¿Anda? Sí, pero tenés que esperar en la página como 10 minutos hasta que se descarga el PDF. 
+
+El proceso es idéntico al de la obtención del Certificado de Alumno Regular, con la distinción de que en “Constancia:” se debe solicitar el “Analítico Parcial” como se muestra en la siguiente imagen.
+Luego de iniciar la descarga (haciendo click en el ícono de pdf), se debe esperar 10 minutos sin cerrar la pestaña.
+Nótese que éste no es el analítico parcial que se solicita para los intercambios, y que ese otro debe obtenerse desde Tramitaciones.
+% subsection El analitico parcial: uno de los grandes bugs del SIU (end)
+
+% section Todo lo que necesitas saber del SIU GUARANI (end)
+
+
+\section{Herramientas clave para todo fiubense}\label{sec:herramientas_clave_para_todo_fiubense} % (fold)
+
+\subsection{De donde consigo material para las materias? github, comunidad fiuba, fiubaverse, etc.}\label{sub:de_donde_consigo_material_para_las_materias_github_comunidad_fiuba_fiubaverse_etc_} % (fold)
+Sí, en FIUBA no existe El Altillo.
+Lo ideal es usar la bibliografía y los apuntes recomendados por las cátedras, que están en la página de cátedra o en su aula virtual en el Campus Grado (o, en su defecto, en alguna página de la materia por fuera del sistema del campus).
+Por si se requiere material adicional, hoy en día casi todo está en el FIUBA-Verse, pero también existen Comunidad FIUBA y los Drives gestionado por alumnos que armó el Espacio Estudiantil FIUBA.
+Además, mucha gente sube cosas en GitHub.
+% subsection De donde consigo material para las materias? github, comunidad fiuba, fiubaverse, etc. (end)
+
+\subsection{Como se a que catedra anotarme?}\label{sub:como_se_a_que_catedra_anotarme_} % (fold)
+Hoy en día para obtener información sobre las distintas cátedras de una misma materia se utiliza FIUBA Reviews, pero está bastante incompleto.
+Se puede preguntar por los grupos de la carrera, por Telegram o a otros compañeros. 
+% subsection Como se a que catedra anotarme? (end)
+
+\subsection{FIUBAMap: Como mantener un registro de tu trayecto universitario y ver facilmente correlativas de materias}\label{sub:fiubamap_como_mantener_un_registro_de_tu_trayecto_universitario_y_ver_facilmente_correlativas_de_materias} % (fold)
+La mayoría de los fiubenses usan el famoso FIUBA MAP (cortesía de Federico del Mazo) para obtener un grafo muy lindo con las correlativas de las materias.
+Registrando su número de padrón y tocando guardar luego de actualizar su historia académica, permite visualizar las correlativas y planear los cuatrimestres de una manera elegante y simple.
+Por ejemplo, a continuación se adjunta el FIUBA-Map para Ingeniería Electrónica (Plan 2020) como viene por defecto.
+Al loguearse aparece además un menú abajo con el porcentaje aprobado de la carrera, el porcentaje de electivas realizado y otras visualizaciones útiles.
+También permite elegir y sumar materias electivas.
+% subsection FIUBAMap: Como mantener un registro de tu trayecto universitario y ver facilmente correlativas de materias (end)
+
+\subsection{Tengo que comprarme herramientas? kit esencial del electronico}\label{sub:tengo_que_comprarme_herramientas_kit_esencial_del_electronico} % (fold)
+No necesitas comprarte tus propias herramientas, podes pedir prestadas del LABi y del pañol para poder realizar los trabajos prácticos de la carrera.
+Ahora, muchos alumnos prefieren ir incorporando herramientas propias a lo largo de los cuatrimestres para poder realizar proyectos fuera de la facultad.
+Dejamos a continuación algunas recomendaciones a tener en cuenta a la hora de comprar equipamiento: 
+\begin{itemize}
+    \item \textbf{Soldador}: Idealmente de potencia alrededor de los 30W. Algunos buenos soldadores de potencia fija son, por ejemplo, los de la marca Proskit. También existen las estaciones de soldadura, que permiten regular la potencia del mismo (a un costo mayor).
+    \item \textbf{Multímetro}: Idealmente True RMS, aunque no es esencial (puede ser de valor medio, son más económicos y para el uso que se le va a dar son mayormente suficientes).
+    \item \textbf{Pinza de punta, alicate}: Ahora están bastante de moda las herramientas que son tanto pinza de punta como alicate, pero es lo mismo que estén juntas o separadas. Son muy útiles a la hora de realizar proyectos. 
+\end{itemize}
+% subsection Tengo que comprarme herramientas? kit esencial del electronico (end)
+
+\subsection{Taller de soldadura}\label{sub:taller_de_soldadura} % (fold)
+Como explicamos en la sección del LABi, se ofrecen cursos de soldadura a mediados de cada cuatrimestre como actividades complementarias de Introducción a la Ingeniería Electrónica / Introducción a la Bioingeniería.
+% subsection Taller de soldadura (end)
+
+
+\subsection{HERRAMIENTAS DIGITALES (LTSPICE, KICAD, OVERLEAF).}\label{sub:herramientas_digitales_ltspice_kicad_overleaf_} % (fold)
+La mayoría de las tareas de simulación y diseño de circuitos electrónicos se realiza en computadora, por lo que es importante familiarizarse con programas útiles e intuitivos.
+Se dan una serie de recomendaciones que son en su mayoría de uso libre o gratuito.
+\begin{itemize}
+    \item LTSpice: Esencial para la simulación de circuitos electrónicos. 
+    \item KiCad: Útil para diseño de placas de circuitos impresos (PCBs). También se pueden realizar simulaciones. 
+    \item Overleaf: Ideal para redacción de trabajos prácticos en entorno LaTeX: se vincula a continuación una plantilla ampliamente utiliza en el entorno de FIUBA.
+\end{itemize}
+% subsection HERRAMIENTAS DIGITALES (LTSPICE, KICAD, OVERLEAF). (end)
+
+% section Herramientas clave para todo fiubense (end)
+
+
+
+\section{TODO SOBRE SIGBAS, EXTENSIoN UNIVERSITARIA E INTERCAMBIOS ACADeMICOS}\label{sec:todo_sobre_sigbas_extension_universitaria_e_intercambios_academicos} % (fold)
+
+\subsection{Grupos de apoyo academico}\label{sub:grupos_de_apoyo_academico} % (fold)
+La facultad ofrece Grupos de Apoyo Académico para las materias del primer año en FIUBA troncales a la mayoría de las ingenierías.
+Profesores y alumnos están disponibles en estos grupos para realizarles consultas de materias como Física de los Sistemas de Partículas, Análisis Matemático II o Álgebra Lineal.
+% subsection Grupos de apoyo academico (end)
+
+\subsection{Becas para alumnos de FIUBA}\label{sub:becas_para_alumnos_de_fiuba} % (fold)
+El mail es becasing@fi.uba.ar.
+Existen becas de apoyo económico de la facultad misma, y también se puede aplicar a otras becas como las Manuel Belgrano o las de la Fundación YPF.
+% subsection BECAS PARA ALUMNOS DE FIUBA (end)
+
+\subsection{Intercambios}\label{sub:intercambios} % (fold)
+Existe la posibilidad de realizar intercambios académicos con otras universidades del exterior.
+También está el programa de Doble Diplomatura, que implica cursar dos años en una universidad de Francia.
+% subsection Intercambios (end)
+
+% section TODO SOBRE SIGBAS, EXTENSIoN UNIVERSITARIA E INTERCAMBIOS ACADeMICOS (end)
+\end{document}
