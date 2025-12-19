@@ -2,7 +2,8 @@
 Draft de la guia para ingresantes
 
  ### TODOs
+ - [ ] Actualizar fotos con otras de mejor calidad
  - [ ] Agregar tildes
  - [ ] Agregar pies de pagina
- - [ ] Estilizar caratula
- - [ ] Agregar links
+ - [x] Estilizar caratula
+ - [x] Agregar links
