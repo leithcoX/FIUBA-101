@@ -27,7 +27,7 @@
 \newcommand{\hrefu}[2]{\href{#1}{\uline{#2}}}
 % \newcommand{\hiperrefu}[2][YYY]{\hyperref[#1]{\uline{#2}}}
 
-\setlist[itemize]{leftmargin=*, itemsep=-12pt}
+\setlist[itemize]{leftmargin=*}
 
 \graphicspath{{img}}
 
@@ -51,7 +51,7 @@
 \definecolor{greenTwo}{HTML}{38761d}
 \definecolor{greenThree}{HTML}{274e13}
 
-\setlength{\parskip}{1.3 \baselineskip}
+\setlength{\parskip}{.5 \baselineskip}
 
 
 \newcommand{\heading}[1]{%
@@ -79,13 +79,13 @@
 \newcommand{\addul}[1]{\underline{#1}} 
 
 \titlespacing*{\section}
-  {0pt}{1\baselineskip}{-.3\baselineskip}
+  {0pt}{1.5\baselineskip}{.2\baselineskip}
 
 \titlespacing*{\subsection}
-  {0pt}{0\baselineskip}{-.8\baselineskip}
+  {0pt}{.85\baselineskip}{.1\baselineskip}
 
 \titlespacing*{\subsubsection}
-  {0pt}{-.5\baselineskip}{-1\baselineskip}
+  {0pt}{.35\baselineskip}{-0.3\baselineskip}
 
 %%% DOCUMENT
 
@@ -100,12 +100,19 @@
 
     \includegraphics[width=1 \textwidth]{fiuba}
 
-    \textbf{\droidFont \fontsize{18}{1}\selectfont Introducción a la Ingeniería Electrónica / Introducción a la Bioingeniería}
+    \vspace{15pt}
+
+    \textbf{\fontsize{18}{1}\selectfont Introducción a la Ingeniería Electrónica / Introducción a la Bioingeniería}
 
     2C2025A
 
 \end{titlepage}
 
+\section*{Introduccion}\label{sec:introduccion} % (fold)
+¡Hola, te damos la bienvenida a FIUBA! En este documento compilamos todas esas cosas que nos hubiese gustado saber cuando recién entramos a la facultad.
+Esperamos que te ayude a medida que te vas adentrando a FIUBA.
+Cualquier cosa que consideres que falta apreciamos que nos avises! 
+% section Introduccion (end)
 \tableofcontents
 \clearpage
 
@@ -472,18 +479,13 @@ Para saber si se cursa en PC o LH, consultar o revisar el campus de la materia).
 Sin iniciar sesión en el \href{https://guaraniautogestion.fi.uba.ar/g3w/acceso}{SIU Guaraní FIUBA}, en lugar de entrar a la cuenta en la solapa de “Acceso,” clickear la solapa de “Fechas de Examen.
 Filtrar según Responsable Académica: “Facultad de Ingeniería - FIUBA”, Ubicación: “Sede Única (Sede)”, Propuesta: “Bioingeniería” / “Ingeniería Electrónica” y haga click en “Buscar” en la sección superior derecha.
 Puede ver la Figura a continuación si tiene dudas: 
-\clearpage
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=1 \textwidth]{fechas_examen}
-    \label{fig:fechas_examen}
-\end{figure}
 % subsection Como puedo ver todas las fechas de examen de una tanda? (end)
 
 
 \subsection{Como obtengo el certificado de alumno regular?}\label{sub:certificado_alumno_regular} % (fold)
 \begin{wrapfigure}{r}{0.3\textwidth} %this figure will be at the right
     \centering
+    \vspace{-15pt}
     \includegraphics[width=0.3\textwidth]{tramites}
 \end{wrapfigure}
 Iniciando sesión en el \href{https://guaraniautogestion.fi.uba.ar/g3w/acceso}{SIU Guaraní FIUBA}, en la solapa de “Trámites” seleccione la opción de “Solicitar Constancias y Certificados.”
@@ -494,7 +496,7 @@ Luego lo enviará al menú con todas sus solicitudes y, haciendo click en el íc
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=0.8 \textwidth]{constancia}
+    \includegraphics[width=1 \textwidth]{constancia}
     \label{fig:constancia}
 \end{figure}
 % subsection Como obtengo el certificado de alumno regular? (end)
@@ -507,6 +509,12 @@ El analitico parcial: uno de los grandes bugs del SIU
 El proceso es idéntico al de la obtención del \hyperref[sub:certificado_alumno_regular]{Certificado de Alumno Regular}, con la distinción de que en “Constancia:” se debe solicitar el “Analítico Parcial” como se muestra en la siguiente imagen.
 Luego de iniciar la descarga (haciendo click en el ícono de pdf), se debe esperar 10 minutos sin cerrar la pestaña.
 Nótese que éste \textbf{no} es el analítico parcial que se solicita para los intercambios, y que ese otro debe obtenerse desde Tramitaciones.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{analitico}
+    \caption{}
+    \label{fig:analitico}
+\end{figure}
 % subsection El analitico parcial: uno de los grandes bugs del SIU (end)
 
 % section Todo lo que necesitas saber del SIU GUARANI (end)
@@ -527,7 +535,7 @@ Se puede preguntar por los grupos de la carrera, por Telegram o a otros compañe
 % subsection Como se a que catedra anotarme? (end)
 
 \subsection{FIUBAMap: Como mantener un registro de tu trayecto universitario y ver facilmente correlativas de materias}\label{sub:fiubamap_como_mantener_un_registro_de_tu_trayecto_universitario_y_ver_facilmente_correlativas_de_materias} % (fold)
-\begin{figure}[b]
+\begin{figure}[h]
     \centering
     \includegraphics[width=1 \textwidth]{fiubamap}
 \end{figure}
