@@ -13,7 +13,8 @@
 \usepackage{titlesec}
 \usepackage{wrapfig}
 \usepackage[normalem]{ulem}
-\usepackage[]{hyperref}
+\usepackage{hyperref}
+\usepackage{parskip}
 % \usepackage[none]{hyphenat}
 
 \hypersetup{
@@ -26,7 +27,7 @@
 \newcommand{\hrefu}[2]{\href{#1}{\uline{#2}}}
 % \newcommand{\hiperrefu}[2][YYY]{\hyperref[#1]{\uline{#2}}}
 
-\setlist[itemize]{leftmargin=*, itemsep=-15pt}
+\setlist[itemize]{leftmargin=*, itemsep=-12pt}
 
 \graphicspath{{img}}
 
@@ -77,6 +78,15 @@
   {} % TODO modificar para que se subraye la subseccion tmb
 \newcommand{\addul}[1]{\underline{#1}} 
 
+\titlespacing*{\section}
+  {0pt}{1\baselineskip}{-.3\baselineskip}
+
+\titlespacing*{\subsection}
+  {0pt}{0\baselineskip}{-.8\baselineskip}
+
+\titlespacing*{\subsubsection}
+  {0pt}{-.5\baselineskip}{-1\baselineskip}
+
 %%% DOCUMENT
 
 \begin{document}
@@ -114,7 +124,6 @@ Se recomienda fuertemente cambiar el mail que aparece por defecto en el Campus d
 
 \subsection{¿Qué significan todos los roles que aparecen en el listado de docentes?}
 % \addcontentsline{toc}{subsection}{#1}
-
 \begin{itemize}
     \item Profesor Titular / Profesor Asociado: Está a cargo de todas las cátedras de la materia. 
     \item Profesor Adjunto: Está a cargo del curso. Por lo general da la clase teórica. 
@@ -122,7 +131,6 @@ Se recomienda fuertemente cambiar el mail que aparece por defecto en el Campus d
     \item Ayudante 1ero: Ayuda en la clase, corrige trabajos prácticos, presenta ejercicios. Son graduados. 
     \item Ayudante 2do / Colaborador:  Ayuda en la clase, corrige trabajos prácticos, presenta ejercicios. Son estudiantes de grado. 
 \end{itemize}
-
 La distribución de la corrección de Trabajos Prácticos y Parcial(es) difiere en las distintas materias, pero por lo general la realizan todos los miembros del plantel docente de la cátedra a la que uno se anotó.
 La corrección de la Evaluación Integradora es realizada únicamente por los Profesores Adjuntos en la gran mayoría de los casos.
 
@@ -237,6 +245,7 @@ Pueden ver un poco más de lo que hacen en su Instagram: \href{https://www.insta
 \subsection{La rama estudiantil IEEE UBA}\label{sub:ieee} % (fold)
 \begin{wrapfigure}{r}{0.45\textwidth} %this figure will be at the right
     \centering
+    \vspace{-30pt}
     \includegraphics[width=0.45\textwidth]{ieee}
 \end{wrapfigure}
 La Rama Estudiantil IEEE UBA es la representación del Instituto de Ingenieros Eléctricos y Electrónicos (IEEE) para toda la UBA.
@@ -438,10 +447,8 @@ La prioridad inicia en 1, y cuanto más baja sea mejor.
 \subsection{Que es un aplazo y en que casos aplica?}\label{sub:aplazo} % (fold)
 Un aplazo es una calificación de \textbf{dos (2)} que queda registrada en la libreta de notas y \textbf{se incluye en el promedio general de la carrera}.
 
-\textbf{No se considera aplazo} desaprobar un final una única vez.
-
+\textbf{No se considera aplazo} desaprobar un final una única vez. \\
 \textbf{Sí se considera aplazo} en los siguientes casos:
-
 \begin{itemize}
     \item Desaprobar el final al menos una vez y luego volverse a anotar a cursar la materia.
     \item Desaprobar el final en tres oportunidades
@@ -450,15 +457,14 @@ Un aplazo es una calificación de \textbf{dos (2)} que queda registrada en la li
 
 
 \subsection{Como puedo ver todas las materias y catedras que se ofrecen?}\label{sub:como_puedo_ver_todas_las_materias_y_catedras_que_se_ofrecen_} % (fold)
-\begin{figure}[b]
-    \centering
-    \includegraphics[width=1 \textwidth]{oferta_comisiones}
-\end{figure}
 Luego de acceder al \href{https://guaraniautogestion.fi.uba.ar/g3w/acceso}{SIU Guaraní FIUBA}, en la solapa de “Reportes” seleccionar “Oferta de comisiones” para poder acceder a la oferta horaria.
 Es importante verificar el cuatrimestre en el cual se busca, en especial en el 2do cuatrimestre donde figura también la oferta horaria del primer cuatrimestre (y puede ser distinta a la del segundo).
 Se pueden utilizar los filtros mostrados a continuación, indicando periodo lectivo, actividad, docente o ubicación (aunque lo de la ubicación es medio un mito, siempre dice Sede Única.
 Para saber si se cursa en PC o LH, consultar o revisar el campus de la materia).
-
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1 \textwidth]{oferta_comisiones}
+\end{figure}
 % subsection Como puedo ver todas las materias y catedras que se ofrecen? (end)
 
 
@@ -466,7 +472,8 @@ Para saber si se cursa en PC o LH, consultar o revisar el campus de la materia).
 Sin iniciar sesión en el \href{https://guaraniautogestion.fi.uba.ar/g3w/acceso}{SIU Guaraní FIUBA}, en lugar de entrar a la cuenta en la solapa de “Acceso,” clickear la solapa de “Fechas de Examen.
 Filtrar según Responsable Académica: “Facultad de Ingeniería - FIUBA”, Ubicación: “Sede Única (Sede)”, Propuesta: “Bioingeniería” / “Ingeniería Electrónica” y haga click en “Buscar” en la sección superior derecha.
 Puede ver la Figura a continuación si tiene dudas: 
-\begin{figure}[h!]
+\clearpage
+\begin{figure}[h]
     \centering
     \includegraphics[width=1 \textwidth]{fechas_examen}
     \label{fig:fechas_examen}
@@ -520,16 +527,15 @@ Se puede preguntar por los grupos de la carrera, por Telegram o a otros compañe
 % subsection Como se a que catedra anotarme? (end)
 
 \subsection{FIUBAMap: Como mantener un registro de tu trayecto universitario y ver facilmente correlativas de materias}\label{sub:fiubamap_como_mantener_un_registro_de_tu_trayecto_universitario_y_ver_facilmente_correlativas_de_materias} % (fold)
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=1 \textwidth]{fiubamap}
+\end{figure}
 La mayoría de los fiubenses usan el famoso \href{https://fede.dm/FIUBA-Map/}{FIUBA MAP} (cortesía de Federico del Mazo) para obtener un grafo muy lindo con las correlativas de las materias.
 Registrando su número de padrón y tocando guardar luego de actualizar su historia académica, permite visualizar las correlativas y planear los cuatrimestres de una manera elegante y simple.
 Por ejemplo, a continuación se adjunta el FIUBA-Map para Ingeniería Electrónica (Plan 2020) como viene por defecto.
 Al loguearse aparece además un menú abajo con el porcentaje aprobado de la carrera, el porcentaje de electivas realizado y otras visualizaciones útiles.
 También permite elegir y sumar materias electivas.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=1 \textwidth]{fiubamap}
-\end{figure}
 % subsection FIUBAMap: Como mantener un registro de tu trayecto universitario y ver facilmente correlativas de materias (end)
 
 \subsection{Tengo que comprarme herramientas? kit esencial del electronico}\label{sub:tengo_que_comprarme_herramientas_kit_esencial_del_electronico} % (fold)
